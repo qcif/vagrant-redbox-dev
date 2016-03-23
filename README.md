@@ -19,9 +19,12 @@ Your box should initialise and install all the required development tools
 ## 5. Install unison on local machine
 `brew install unison`
 
-## 6. Start unison file synching
+## 6. Install vagrant unison plugin
+`vagrant install vagrant-unison2`
+
+## 7. Start unison file synching
 'vagrant unison-sync-polling'
 This will start polling every second your local machine share directory and the directory on the virtual machine and keep them in sync as files change. You may want to do this in another console window as this will stay running until you hit Ctrl+C
 
-## 7. SSH onto box
+## 8. SSH onto box
 `vagrant ssh`
