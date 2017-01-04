@@ -20,6 +20,7 @@ sudo yum install -y epel-release
 sudo yum install -y python-pip
 sudo pip install --upgrade pip
 sudo pip install docker-compose
+sudo pip install backports.ssl_match_hostname --upgrade
 sudo yum upgrade -y python*
 fi
 
