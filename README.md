@@ -7,6 +7,8 @@ Installation instructions
 
 ## 2. Install Vagrant
 `brew install vagrant`
+or 
+`brew cask install vagrant`
 
 ## 3. Configure source directory to be mounted on box
 Edit the Vagrantfile and set the config.unison.host_folder to the directory you'd like to sync
@@ -20,7 +22,7 @@ Your box should initialise and install all the required development tools
 `brew install unison`
 
 ## 6. Install vagrant unison plugin
-`vagrant install vagrant-unison2`
+`vagrant plugin install vagrant-unison2`
 
 ## 7. Start unison file synching
 'vagrant unison-sync-polling'
