@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 1500, host: 1500
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "private_network", ip: "192.1 68.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -39,9 +39,10 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
   # Required configs
-  config.unison.host_folder = ""  #relative to the folder your Vagrantfile is in
+  config.unison.host_folder = "../"  #relative to the folder your Vagrantfile is in
   config.unison.guest_folder = "source" #relative to the vagrant home folder (e.g. /home/vagrant)
   config.unison.perms = 0
+  config.unison.ignore = "Name {.DS_Store,.git,node_modules}"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
