@@ -44,6 +44,9 @@ Vagrant.configure(2) do |config|
   config.unison.guest_folder = "source" #relative to the vagrant home folder (e.g. /home/vagrant)
   config.unison.perms = 0
   config.unison.ignore = "Name {.DS_Store,.git,node_modules}"
+  config.vm.provider 'virtualbox' do |vb|
+   vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
+  end
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
