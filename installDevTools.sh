@@ -18,9 +18,12 @@ sudo systemctl enable docker.service
 sudo systemctl start docker.service
 sudo yum install -y epel-release
 sudo yum install -y python-pip
+sudo yum install -y gcc
+sudo yum install -y python-devel
 sudo pip install --upgrade pip
 sudo pip install docker-compose
 sudo pip install backports.ssl_match_hostname --upgrade
+sudo pip install python-glanceclient
 sudo yum upgrade -y python*
 fi
 
