@@ -18,15 +18,18 @@ sudo systemctl enable docker.service
 sudo systemctl start docker.service
 sudo yum install -y epel-release
 sudo yum install -y python-pip
+sudo yum install -y gcc
+sudo yum install -y python-devel
 sudo pip install --upgrade pip
 sudo pip install docker-compose
 sudo pip install backports.ssl_match_hostname --upgrade
+sudo pip install python-glanceclient
 sudo yum upgrade -y python*
 fi
 
 if [ ! -f "/usr/bin/unison" ]; then
   #If this line fails, it's probably because the version has updated check out http://ftp5.gwdg.de/pub/linux/archlinux/extra/os/x86_64/ and fix the url to get the new version
-  curl -o unison.tar.xz http://ftp5.gwdg.de/pub/linux/archlinux/extra/os/x86_64/unison-2.48.4-1-x86_64.pkg.tar.xz
+  curl -o unison.tar.xz http://ftp5.gwdg.de/pub/linux/archlinux/extra/os/x86_64/unison-2.48.4-2-x86_64.pkg.tar.xz
   sudo tar xf unison.tar.xz -C /
 fi
 # installing ntpd
