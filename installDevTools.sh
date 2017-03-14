@@ -29,3 +29,7 @@ if [ ! -f "/usr/bin/unison" ]; then
   curl -o unison.tar.xz http://ftp5.gwdg.de/pub/linux/archlinux/extra/os/x86_64/unison-2.48.4-1-x86_64.pkg.tar.xz
   sudo tar xf unison.tar.xz -C /
 fi
+# installing ntpd
+sudo yum install -y ntp
+sudo systemctl enable ntpd
+sudo systemctl start ntpd
