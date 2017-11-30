@@ -46,6 +46,8 @@ Vagrant.configure(2) do |config|
   config.unison.ignore = "Name {.DS_Store,.git,node_modules}"
   config.vm.provider 'virtualbox' do |vb|
    vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
+   vb.memory = 1024
+   vb.cpus = 2
   end
 
   # Provider-specific configuration so you can fine-tune various
