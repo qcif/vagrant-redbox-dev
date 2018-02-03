@@ -17,3 +17,14 @@ Your box should initialise and install all the required development tools
 
 ## 4. SSH onto box
 `vagrant ssh`
+
+---
+### Sync Issues
+
+If you get Vagrant errors when mounting synced folder. Installing the VirtualBox Guest Additions can help
+
+`vagrant plugin install vagrant-vbguest`
+
+then
+
+`vagrant destroy && vagrant up`
