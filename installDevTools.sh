@@ -1,11 +1,6 @@
 #!/bin/bash
-sudo yum install -y wget java-1.7.0-openjdk java-1.7.0-openjdk-devel unzip git ruby
+sudo yum install -y wget java-1.7.0-openjdk java-1.7.0-openjdk-devel unzip git ruby inotify-tools
 if [ ! -f "/usr/bin/mvn" ]; then
-  # Control will enter here if $DIRECTORY doesn't exist.
-  #wget "https://archive.apache.org/dist/maven/binaries/apache-maven-2.2.1-bin.zip"
-  #unzip apache-maven-2.2.1-bin.zip
-  #mv apache-maven-2.2.1/ /opt/
-  #echo "export PATH=/opt/apache-maven-2.2.1/bin:$PATH" >> ~/.bashrc
   sudo curl -s https://bitbucket.org/mjensen/mvnvm/raw/master/mvn > mvn
   sudo mv mvn /usr/bin
   sudo chmod 0755 /usr/bin/mvn
@@ -42,6 +37,13 @@ if [ ! -f "/usr/bin/unison" ]; then
   make
   cp src/unison /bin/
 fi
+
+sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install 8.9.4
+
 # installing ntpd
 sudo yum install -y ntp
 sudo systemctl enable ntpd
